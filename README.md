@@ -117,7 +117,7 @@ We easily add references via triple-slash comments to the typing files by adding
 By default express creates a default web page. We don't really need this but it doesn't hurt that it's there. Lets create a new router by adding a new file, **api.js** into the **routes** folder. You can do this by just right clicking on the routes folder and creating a new file:
 
 
-![](ScreenSHots/ss15.png)
+![](ScreenShots/ss15.png)
 
 Use this starter code which creates an [Express Router](http://expressjs.com/4x/api.html#router) and exposes it for use in app.js:
 
