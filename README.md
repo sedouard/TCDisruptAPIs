@@ -22,7 +22,7 @@ This lab will use Azure Websites with the Monaco Browser-based IDE. Monaco provi
 
 To get started first grab your Azure token provided by me, @sedouard. It will look something like this:
 
-!!!INSERT AZURE TOKEN CARD PICTURE HERE
+![](ScreenShots/ss27.png)
 
 After you sign up for your **free** Azure subscription, you can spin up 2 Azure Websites. One will be your **dev** website and the other will be your **production** website.
 
