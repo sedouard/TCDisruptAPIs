@@ -10,7 +10,7 @@ At the end of this lab you will know
 
 ## Introduction
 
-This lab will use Azure Websites with the Monaco Browser-based IDE. Monaco provides intelligent auto-completion, javascript validation, git integration, and command line to provide you with an ultimate, fast all-in-one Node.js website and API development environment.
+This lab will use Azure Websites with the Monaco Browser-based IDE. Monaco provides intelligent auto-completion, javascript validation, git integration, and command line to provide you with a fast, all-in-one Node.js website, API and front-end javascript development environment.
 
 **Requirements**
 
