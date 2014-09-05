@@ -26,13 +26,13 @@ To get started first grab your Azure token provided by me, @sedouard. It will lo
 
 After you sign up for your **free** Azure subscription, you can spin up 2 Azure Websites. One will be your **dev** website and the other will be your **production** website.
 
-First, go to the *current* Azure portal (manage.windowsazure.com) not to be confused with the new portal (portal.azure.com). In this portal we will create website by hitting the big **'+'** on the bottom left side and creating a new website with **Quick Create**. Be sure to name the first side with the suffix **-dev** and the second with **-prod**. This will help us differentiate between our development environment and production deployment.
+First, go to the *current* Azure portal (manage.windowsazure.com) not to be confused with the new portal (portal.azure.com). In this portal we will create website by hitting the big **'+'** on the bottom left side and creating a new website with **Quick Create**. Be sure to name the first site with the suffix **-dev** and the second with **-prod**. This will help us differentiate between our development environment and production deployment.
 
 ![](ScreenShots/ss1.png)
 
 Do this one more time for your Azure Website with the suffix **-prod**.
 
-In your websites listing you should see the two new websites you just created:
+In your websites listing, you should see the two new websites you just created:
 
 ![](ScreenShots/ss2.png)
 
@@ -55,7 +55,7 @@ Now, go back to the **Dashboard tab** and click the link that says '**Edit in Vi
 
 ## The Monaco Editor
 
-When you do the previous step you'll be hurled into a completely new environment, the Monaco Development Environment which allows you to create full fledged websites and APIs that are hyper scalable.
+When you do the previous step you'll be hurled into a completely new environment - the Monaco Development Environment - which allows you to create full fledged websites and APIs that are hyper scalable right in the browser.
 
 Notice that the IDE looks pretty bare with almost nothing in it besides the default place holder page:
 
@@ -91,7 +91,9 @@ Open up App.js and you'll see we have a fully syntax highlighted javascript edit
 
 ![](ScreenShots/ss12.png)
 
-We can quickly fix this by using [Typescript](http://typscriptlang.org), an open source compile-to-javascript language which allows for typings. This allows the editor to know these declarations. First add the typescript definition command line interface which will allow us to add the typings:
+We can quickly fix this by using [Typescript](http://typscriptlang.org) definitions. Typescript an open source compile-to-javascript language which allows for typings. This allows the editor to know these declarations. The great thing about Typescript definitions is that you don't need to use typescript to take advantage of them. 
+
+First add the typescript definition command line interface which will allow us to add the typings:
 
 ```batch
 npm install -g tsd
@@ -108,13 +110,13 @@ This will install the latest node.js and express API typings to a new folder cal
 ![](ScreenShots/ss13.png)
 
 
-We easily add references via triple-slash comments to the typing files by adding '/// ' plus the **reference** tag. This is seen as a comment but the editor (which can also understand TypeScript) will interpret this information. Now you can see rich jsDoc and typing information right into the editor. 
+We can easily add references via triple-slash comments to the typing files by adding '/// ' plus the **reference** tag. This is seen as a comment but the editor (which can also understand TypeScript) will interpret this information. Now you can see rich jsDoc and typing information right in the editor. 
 
 ![](ScreenShots/ss14.png)
 
 ## Creating the API router
 
-By default express creates a default web page. We don't really need this but it doesn't hurt that it's there. Lets create a new router by adding a new file, **api.js** into the **routes** folder. You can do this by just right clicking on the routes folder and creating a new file:
+By default express creates a default web page. We don't really need this but it doesn't hurt that it's there. Lets create a new router by adding a new file, **api.js** into the **routes** folder. This is where we will service API calls. You can do this by just right clicking on the routes folder and creating a new file:
 
 
 ![](ScreenShots/ss15.png)
@@ -153,7 +155,7 @@ Now, we'll place the api router at an appropiate path on our server, say **/api*
 ```js
 app.use('/', routes);
 app.use('/users', users);
-//add the API route
+//'mount' the API router at the web server url path /api
 app.use('/api', api);
 ```
 **app.js**
@@ -173,7 +175,7 @@ Your web server will start and your window will split with a console window to y
 
 ### Enforcing an API key with Middleware
 
-Often times we don't want just any random application calling our API. A simple use of [Middleware](http://expressjs.com/api.html#middleware.api) can be to insert some code between when our call is recieved and when its responded to check if the API call has a valid API key. For this case, we want to enforce this requirement just on the API, although with express you can enforce this on the entire application as well. We can easily do this by using the **use** method on the API router:
+Often times we want to perform some routine task for all or a subset of routes on our server. A simple use of [Middleware](http://expressjs.com/api.html#middleware.api) can be to insert some code between when our call is recieved and when its responded to check if the API call has a valid API key. For this case, we want to enforce this requirement just on the API routes, although with express you can enforce this on the entire application as well. We can easily do this by using the **use** method on the API router:
 
 ```js
 //add middleware to check for an API key for any request
@@ -193,6 +195,9 @@ router.use(function(req, res, next){
 
 });
 ```
+
+Now sending the request without the **api_key** parameter gets caught by the middleware before even making it to the handler.
+
 **routes/api.js**
 
 ### So You Want to Work as a Team?
@@ -244,7 +249,7 @@ After adding this file you'll see that we now have a reasonable amount of files 
 Now, open up the console, which has all of our git commands. We'll commit to this repository and add our github repo as our remote origin.
 
 ```bash
-# Add ll of our files to the repo
+# Add all of our files to the repo
 git add .
 # Commit to local repo
 git commit . -m 'initial commit!'
@@ -252,7 +257,7 @@ git commit . -m 'initial commit!'
 git remote add origin https://github.com/sedouard/APIsFastMonaco.git
 ```
 
-Now we created our production site for a reason. This will be your production site which can run continuous integration deployments. You can share this server with your friends.
+Now, we created our production site for a reason. This will be your production site which can run continuous integration deployments. You can share this server with your friends!
 
 Go to your production website dashboard and click **Set up deployment from source control**:
 
@@ -289,4 +294,4 @@ Browse to your website and you'll see that your website (and API) has been launc
 
 ## Want to run Continuous Integration Build Tasks and Tests?
 
-Check out [this guide](https://github.com/sedouard/AzureDevopsLabs/tree/master/CI) which shows you how to use custom deployment scripts to run [grunt](http://gruntjs.com/) tasks and [mocha](http://visionmedia.github.io/mocha/) unit tests!
+Check out [this guide](https://github.com/sedouard/AzureDevopsLabs/tree/master/CI) which shows you how to use custom deployment scripts to run [grunt](http://gruntjs.com/) tasks and [mocha](http://visionmedia.github.io/mocha/) unit tests when you push
