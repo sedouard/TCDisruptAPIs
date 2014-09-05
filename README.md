@@ -26,7 +26,7 @@ To get started first grab your Azure token provided by me, @sedouard. It will lo
 
 After you sign up for your **free** Azure subscription, you can spin up 2 Azure Websites. One will be your **dev** website and the other will be your **production** website.
 
-First, go to **current** Azure portal (manage.windowsazure.com) not to be confused with the new portal (portal.azure.com). In this portal we will create website by hitting the big **'+'** on the bottom left side and creating a new website with **Quick Create**. Be sure to name the first side with the suffix **-dev** and the second with **-prod**. This will help us differentiate between our development environment and production deployment.
+First, go to the *current* Azure portal (manage.windowsazure.com) not to be confused with the new portal (portal.azure.com). In this portal we will create website by hitting the big **'+'** on the bottom left side and creating a new website with **Quick Create**. Be sure to name the first side with the suffix **-dev** and the second with **-prod**. This will help us differentiate between our development environment and production deployment.
 
 ![](ScreenShots/ss1.png)
 
