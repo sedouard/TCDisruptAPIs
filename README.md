@@ -294,4 +294,4 @@ Browse to your website and you'll see that your website (and API) has been launc
 
 ## Want to run Continuous Integration Build Tasks and Tests?
 
-Check out [this guide](https://github.com/sedouard/AzureDevopsLabs/tree/master/CI) which shows you how to use custom deployment scripts to run [grunt](http://gruntjs.com/) tasks and [mocha](http://visionmedia.github.io/mocha/) unit tests when you push
+Check out [this guide](https://github.com/sedouard/AzureDevopsLabs/tree/master/CI) which shows you how to use custom deployment scripts to run [grunt](http://gruntjs.com/) tasks and [mocha](http://mochajs.org/) unit tests when you push
